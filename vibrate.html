@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vibration api</title>
+</head>
+<body>
+    <button onclick ="vibrate(1000)">vibrate single</button>
+    <button onclick="vibpattern()">vibrate pattern</button>
+   <script>
+       //vibrate single
+       function vibrate(ms){
+         navigator.vibrate(ms); 
+       }
+       //vibrate pattern
+       function vibpattren(){
+        navigator.vibrate([300,100,300,100,300]);
+       }
+   </script> 
+</body>
+</html>
