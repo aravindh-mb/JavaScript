@@ -7,8 +7,17 @@
     <title>vibration api</title>
 </head>
 <body>
-    <button onclick ="vibrate(1000)">vibrate single</button>
-    <button onclick="vibpattern()">vibrate pattern</button>
+    <style>
+        .btn1, .btn2{
+        width:200px;
+        height:20px;
+        background-color:green;
+        color:white;
+        }
+    </style>
+    <button class="btn1" onclick ="vibrate(1000)">vibrate single</button>
+    <br><br>
+    <button class ="btn2" onclick="vibpattern()">vibrate pattern</button>
    <script>
        //vibrate single
        function vibrate(ms){
