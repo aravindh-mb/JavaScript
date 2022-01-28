@@ -17,6 +17,7 @@
                alert("device is offline");
            }
         }
+        //function calling
         deviceStatus();
     </script>
 </body>
