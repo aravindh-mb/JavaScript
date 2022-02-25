@@ -1,4 +1,4 @@
- function push_notification()
+ function send_notification()
     {
               //check if browser supports notification API
         if("Notification" in window)
@@ -24,4 +24,4 @@
             alert("Your browser doesn't support notfication API");
         }      
     }
-    push_notification();
+    send_notification();
