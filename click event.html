@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-----------------CLICK EVENTS------------------ -->
+    <button id="btn1">Click me</button>
+<script>
+  let btn1 = document.getElementById("btn1");
+  btn1.addEventListener("click", () => {
+    document.write("Button clicked.");
+  });
+  //out put - Button clicked
+</script>
+
+<!--  ------------------remove event---------------------------- -->
+<button id="btn2">remove event</button>
+<script>
+  let btn2 = document.getElementById("btn2");
+  function once() {
+    document.write("Done.");
+    btn2.removeEventListener("click", once);
+  }
+  btn2.addEventListener("click", once);
+//   output - done
+</script>
+
+<!-- ----------------------event objects-------------------------------------- -->
+
+<button id="btn3">Click me any way you want</button>
+<script>
+  let btn3 = document.getElementById("btn3");
+  btn3.addEventListener("mousedown", event => {
+    if (event.button == 0) {
+      document.write("Left button");
+    //   output -left  clicked
+    } else if (event.button == 1) {
+      document.write("Middle button");
+    //   output -middle clicked
+
+    } else if (event.button == 2) {
+      document.write("Right button");
+    //   output -right clicked
+    }
+  });
+</script>
+<!-- --------------------------------Default Actions------------------------------------- -->
+<a href="https://developer.mozilla.org/">MDN</a>
+<script>
+  let link = document.querySelector("a");
+  link.addEventListener("click", event => {
+    document.write("Nope navigation prevented.");
+    event.preventDefault();
+    // output - Nope navigation prevented
+  });
+</script>
+<!--------------------------------------Double click ------------------------------------------------->
+<button type="button" id="dbclick">double click</button>
+<script>
+  let dbc = document.getElementById("dbclick");
+    dbc.addEventListener("dblclick", ()=>{
+      document.write("double clicked ");
+    });
+</script>
+</body>
+</html>
