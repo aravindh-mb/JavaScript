@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <style>
+      *{
+          font-size:20px;
+          color:rgb(0, 0, 0);
+      }
+      table{
+        border:2px solid black;
+        width:100%;
+        border-collapse: collapse;
+        padding:0px;
+        color:rgb(0, 0, 0);
+        background-color:rgb(255, 255, 255);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      th{
+          background-color: rgb(0, 209, 52);
+          text-align:center;
+          color:white;
+      }
+      td,th{
+          border-bottom:2px solid rgb(0, 0, 0);
+          border-right:2px solid rgb(0, 0, 0);
+          text-align:center;
+
+      }
+      tr:nth-child(even){
+          background-color:rgb(10, 194, 32);
+          transition: 0.4s;
+      }
+      tr:nth-child(even):hover,
+      tr:nth-child(odd):hover{
+          background-color:lightblue;
+      }
+      #print{
+          color:white;
+          background-color:dodgerblue;
+          border-radius: 8px;
+          border:none;
+          padding:10px;
+          cursor:pointer;
+          display:flex;
+          align-items:center;
+          justify-content: center;
+          width:400px;
+          margin: auto;
+      }
+  </style>
+      <table>
+        <tr><th>S.No</th>
+            <th>Name</th>
+            <th>chemistry</th>
+            <th>physics</th>
+            <th>maths</th>    
+            <th>Total</th>      
+        </tr>
+        <tbody id="table">      
+        </tbody>
+    </table>
+    <br><br>
+    <button id="print" onclick="printpage()">Print</button>
+    <script>
+        let details = [
+            {
+               'sno':'1', 'name':"visweswaran" , 'maths':'33','physics':'92','chemistry':'11','total':''},
+            {
+                'sno':'2', 'name':"dharun" , 'maths':'90','physics':'33','chemistry':'33','total':''},
+            {
+                'sno':'3','name':"rajkumar" , 'maths':'55','physics':'55','chemistry':'55','total':''},
+            {
+                'sno':'4','name':"manikandan" , 'maths':'22','physics':'62','chemistry':'22','total':''},
+            {
+                'sno':'5','name':"sivaprakash" , 'maths':'44','physics':'44','chemistry':'44','total':''},
+            {
+                'sno':'6', 'name':"hariharan" , 'maths':'55','physics':'55','chemistry':'55','total':''},
+            {
+                'sno':'7','name':"jaiganesh" , 'maths':'66','physics':'66','chemistry':'66','total':''},
+            {
+                'sno':'8', 'name':"santhosh" , 'maths':'77','physics':'77','chemistry':'77','total':''},
+            {
+                'sno':'9','name':"santhosh" , 'maths':'88','physics':'88','chemistry':'88','total':''},
+            {
+                'sno':'10','name':"aravindh" , 'maths':'29','physics':'40','chemistry':'39','total':''},
+        ];
+   buildTable(details);    
+   function buildTable(td){
+       var table = document.getElementById('table');
+        for (let data = 0; data < td.length; data++) {
+
+            let maths =Number(td[data].maths);
+            let physics =Number(td[data].physics);
+            let chemistry =Number(td[data].chemistry);
+            const total=maths+chemistry+physics;
+            
+       var row = `
+       <tr>
+               <td>${td[data].sno}</td>
+               <td>${td[data].name}</td>
+               <td>${td[data].chemistry}</td>
+               <td>${td[data].physics}</td>
+               <td>${td[data].maths}</td>     
+                <td>${td[data].total.innerText=total}</td>     
+       </tr>`
+       table.innerHTML +=row;
+       console.log(total);
+        }
+   }
+       </script>
+<script>
+    function printpage(){
+        print();
+    }
+</script>
+</body>
+</html>
